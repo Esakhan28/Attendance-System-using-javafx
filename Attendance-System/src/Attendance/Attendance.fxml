@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Attendance.AttendanceController">
+    <children>
+      <HBox spacing="10.0">
+         <children>
+            <JFXTextField fx:id="searchFiled" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyTyped="#Filter" promptText="Filter" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="SF Compact Display Regular" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXDatePicker fx:id="datePicker" defaultColor="#4059a9" prefHeight="32.0" promptText="Select Date" />
+            <JFXComboBox fx:id="subjs" maxHeight="1.7976931348623157E308" maxWidth="200.0" onAction="#setClass" promptText="All" HBox.hgrow="ALWAYS" />
+            <JFXComboBox fx:id="section" disable="true" maxHeight="1.7976931348623157E308" maxWidth="200.0" onAction="#setClass" prefWidth="200.0" promptText="Section" />
+         </children>
+      </HBox>
+        <TableView fx:id="list_table" stylesheets="@../StyleCheet/style.css" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="id_col" maxWidth="200.0" minWidth="100.0" prefWidth="-1.0" text="ID" />
+                <TableColumn fx:id="name_col" maxWidth="400.0" minWidth="300.0" prefWidth="-1.0" text="Name" />
+                <TableColumn fx:id="present_col" maxWidth="100.0" minWidth="90.0" prefWidth="-1.0" text="Present" />
+                <TableColumn fx:id="excuse_col" maxWidth="1.7976931348623157E308" minWidth="400.0" onEditCommit="#UpdateExcuse" prefWidth="-1.0" text="Excuse" />
+            </columns>
+        </TableView>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>

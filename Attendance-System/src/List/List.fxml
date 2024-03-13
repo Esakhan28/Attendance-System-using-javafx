@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="List.ListController">
+    <children>
+        <HBox spacing="10.0" VBox.vgrow="NEVER">
+            <children>
+                <JFXTextField fx:id="searchFiled" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyTyped="#Filter" promptText="Filter" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="SF Compact Display Regular" size="16.0" />
+                    </font>
+                </JFXTextField>
+                <JFXComboBox fx:id="subjs" maxHeight="1.7976931348623157E308" maxWidth="200.0" onAction="#setClass" promptText="Subject" HBox.hgrow="ALWAYS" />
+            <JFXComboBox fx:id="section" disable="true" layoutX="915.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="200.0" minWidth="200.0" onAction="#setClass" promptText="Section" />
+            </children>
+        </HBox>
+        <TableView fx:id="list_table" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../StyleCheet/style.css" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="id_col" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="ID" />
+                <TableColumn fx:id="name_col" maxWidth="400.0" minWidth="250.0" onEditCommit="#updateCol" prefWidth="238.0" text="Name" />
+                <TableColumn fx:id="past_col" maxWidth="-1.0" minWidth="100.0" onEditCommit="#updateCol" prefWidth="-1.0" text="Absences" />
+                <TableColumn fx:id="bar_col" maxWidth="-1.0" minWidth="150.0" onEditCommit="#updateCol" prefWidth="-1.0" text="Bar Status" />
+                <TableColumn fx:id="mail_col" maxWidth="1.7976931348623157E308" minWidth="300.0" onEditCommit="#updateCol" prefWidth="-1.0" text="Email" />
+            </columns>
+        </TableView>
+        <HBox spacing="10.0">
+            <children>
+                <JFXTextField fx:id="id_field" promptText="ID" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="name_field" labelFloat="true" promptText="Name" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="abs_field" labelFloat="true" promptText="Absences" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="bar_field" labelFloat="true" promptText="Bar Status" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="subCol" labelFloat="true" promptText="Subject(s),section" HBox.hgrow="ALWAYS" />
+                <JFXTextField fx:id="mail_field" labelFloat="true" promptText="Email" HBox.hgrow="ALWAYS" />
+                <JFXButton fx:id="addBtn" onAction="#addRow" ripplerFill="TRANSPARENT" style="-fx-background-color: #2980b9;" text="Add" textFill="WHITE">
+                    <font>
+                        <Font name="SF Compact Display Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="delBtn" onAction="#deleteRow" ripplerFill="TRANSPARENT" style="-fx-background-color: #2980b9;" text="Delete" textFill="WHITE">
+                    <font>
+                        <Font name="SF Compact Display Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+            </children>
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>

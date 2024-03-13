@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.NumberValidator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Settings.Settings">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Begining of semster:">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <JFXDatePicker fx:id="sem_start" defaultColor="#4059a9" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="20.0">
+            <children>
+                <Label text="End of semster:">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <JFXDatePicker fx:id="sem_end" defaultColor="#4059a9" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" spacing="20.0">
+            <children>
+                <Label text="Semster Year:">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="sem_year" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="233.0" spacing="20.0">
+            <children>
+                <Label text="Semster number:">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="sem_number" />
+                <NumberValidator />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="100.0">
+            <children>
+                <JFXButton fx:id="save" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#savePref" style="-fx-background-color: #4059a9;" text="Save" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </JFXButton>
+                <Label fx:id="saved" text="Settings saved!" visible="false">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>

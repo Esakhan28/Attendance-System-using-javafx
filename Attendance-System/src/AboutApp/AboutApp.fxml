@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="AboutApp.AboutAppController">
+    <children>
+        <ImageView fitHeight="283.0" fitWidth="309.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/window.png"/>
+            </image>
+            <VBox.margin>
+                <Insets bottom="10.0"/>
+            </VBox.margin>
+        </ImageView>
+        <Label alignment="CENTER" text="By">
+            <font>
+                <Font name="SF Compact Display Regular" size="18.0"/>
+            </font>
+        </Label>
+        <Hyperlink fx:id="suan" text="Blacksuan19">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Hyperlink>
+        <Label alignment="CENTER" contentDisplay="CENTER" text="Used Libraries">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <Hyperlink fx:id="jfx" text="JFoenix">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Hyperlink>
+        <Hyperlink fx:id="fawesome" text="Font Awesome">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Hyperlink>
+        <Hyperlink fx:id="cfx" text="ControlsFX">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Hyperlink>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+</VBox>

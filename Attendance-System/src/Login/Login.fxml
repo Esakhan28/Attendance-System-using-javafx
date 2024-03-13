@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="405.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
+    <top>
+        <ImageView fitHeight="137.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true"
+                   BorderPane.alignment="CENTER">
+            <image>
+                <Image url="@../resources/login.png"/>
+            </image>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+        </ImageView>
+    </top>
+    <padding>
+        <Insets top="10.0"/>
+    </padding>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="50.0" spacing="45.0">
+                            <children>
+                                <MaterialDesignIconView glyphName="LOCK" size="25"/>
+                                <MaterialDesignIconView glyphName="ACCOUNT_CIRCLE" size="25"/>
+                            </children>
+                            <padding>
+                                <Insets top="60.0"/>
+                            </padding>
+                        </VBox>
+                        <VBox prefHeight="204.0" prefWidth="350.0" spacing="40.0">
+                            <children>
+                                <JFXTextField fx:id="id" focusColor="#607d8a" labelFloat="true"
+                                              onKeyPressed="#HandleEnter" prefHeight="30.0" prefWidth="280.0"
+                                              promptText="User ID" unFocusColor="#757575"/>
+                                <JFXPasswordField fx:id="pass" focusColor="#607d8a" labelFloat="true"
+                                                  onKeyPressed="#HandleEnter" prefHeight="30.0" prefWidth="280.0"
+                                                  promptText="Password" unFocusColor="#607d8a"/>
+                            </children>
+                            <padding>
+                                <Insets top="50.0"/>
+                            </padding>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <JFXButton fx:id="logBtn" buttonType="RAISED" contentDisplay="CENTER" onAction="#dataCheck"
+                                   prefHeight="41.0" prefWidth="112.0" ripplerFill="#283593"
+                                   style="-fx-background-color: #3f51b5;" text="Login" textFill="#fcfafa"/>
+                        <Label fx:id="wrongData" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0"
+                               prefWidth="224.0" text="Wrong Information!" textFill="#d5443c" visible="false"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
